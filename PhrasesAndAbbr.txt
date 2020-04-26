@@ -1,0 +1,99 @@
+IHTSD	I'm here to see Doctor
+MNI	My name is
+MII	My insurance is
+PBPWICMM	Please be patient while I compose my message
+INTGTTH	I need to go to the hospital.
+PHM	Please help me.
+IDFW	I don't feel well.
+IRAI	I really appreciate it!
+X	Call 911
+MDBI	My date of birth is
+WU	What's up?
+WN  What's new?
+WHUBUTL  What have you been up to lately?
+HIG    How's it going?
+HAT   How are things?
+HL   How's life?
+IFTHAY   I'm fine, thanks. How about you?
+PG   Pretty good.
+SAA  Same as always
+NSG    Not so great.
+CBB   Could be better
+CC    Can't complain
+TY	Thank you
+IRAI  I really appreciate it.
+IRG   I'm really grateful
+TSKOY   That's so kind of you.
+IOUO    I owe you one. 
+YW	You're welcome.
+NP   No problem.
+NW    No worries
+DMI  Don't mention it.
+MP   My pleasure.
+AT  Any time.
+IWNCWY	It was nice chatting with you.
+AISGG  Anyway, I should get going.
+DYHAI	Do you have any idea
+WYHTK   Would you happen to know 
+IDSYWK   I don't suppose you would know
+IDK		I don't know:
+IHNI   I have no idea.
+ICHYT   I can't help you there.
+BM   Beats me.
+INRS  I'm not really sure.
+IBWATT   I've been wondering that, too.
+INGIMT	I've never given it much thought.
+IDFSEW   I don't feel strongly either way.
+IDMADTM   It doesn't make any difference to me.
+IHNOOTM  I have no opinion on the matter.
+EX    Exactly.
+AB   Absolutely.
+TST  That's so true.
+TFS   That's for sure.
+IAH   I agree 100%
+ICAWYM I couldn't agree with you more.
+TMAI   Tell me about it!
+YTM	You're telling me!
+IS   I'll say!
+ISS   I suppose so. 
+INSSAT	I'm not so sure about that.
+TNHISI  That's not how I see it.
+NN   Not necessarily
+TG	That's great!
+HW   How wonderful!
+AS   Awesome!
+ON	Oh no
+TT   That's terrible.
+PU    Poor you. 
+TA	That's awful!
+ISSHTT   I'm so sorry to hear that.
+AYF Are you free
+AYDA   Are you doing anything
+DYW    Do you wanna
+WULT  Would you like to
+STA	I'm starving!
+LGABTE   Let's grab a bite to eat.
+HAEOT    How about eating out tonight? 
+IH   I'll have
+ICAF	It cost a fortune.
+ICAAAAL    It cost an arm and a leg.
+TARO    That's a rip-off.
+TBP   That's a bit pricey.
+TQR   That's quite reasonable. 
+TAGD   That's a good deal. 
+IWARB   It was a real bargain.
+IWDC   It was dirt cheap.
+IALC	It's a little chilly.
+IFR   It's freezing. 
+MSTBU   Make sure to bundle up. 
+IAB   It's absolutely boiling! 
+ISHO   it scorching hot outside
+IE	I'm exhausted.
+IDT   I'm dead tired.
+IB   I'm beat
+ICHKMEO    I can hardly keep my eyes open
+IGHTS   I'm gonna hit the sack. 
+GIH		Glad it helps.
+MP	My pleasure.
+LY	Love you!
+YTB	You're the best!
