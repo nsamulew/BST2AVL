@@ -468,9 +468,45 @@ int getBalance(TNode *tmp){
 
 
 TNode *rotateRight(TNode *tmp){
-	return;
-
+	TNode *tmp2 = tmp->left;
+	if(tmp->parent->left == tmp){
+		tmp->parent->left = tmp->left;
+		tmp->left->parent = tmp->parent;
+		tmp2->right->parent = tmp;
+		tmp->left = tmp->right->left;
+		tmp2->right = tmp;
+		tmp->parent = tmp2;
+	}
+	else if(tmp->parent->right == tmp){
+		tmp->parent->right = tmp->left;
+		tmp->left->parent = tmp->parent;
+		tmp2->right->parent = tmp;
+		tmp->left = tmp->right->left;
+		tmp2->right = tmp;
+		tmp->parent = tmp2;
+	}
+	return tmp;
 }
 
+
+
+
+
+
+TNode BST::*rotateLeft(TNode *tmp){
+	TNode *tmp2 =tmp->right
+	TNode *tmp3 = tmp2;
+	while (tmp3->left!=NULL){
+		tmp3=tmp3->left;
+	}
+	tmp2->parent=tmp->parent;
+	tmp->parent=tmp3;
+	tmp->right=NULL;
+	tmp3->left=tmp;
+	if (tmp2->parent==NULL){
+		root = tmp2;
+	}
+	return tmp2;
+}
 
 
