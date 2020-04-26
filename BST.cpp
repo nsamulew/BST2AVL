@@ -450,8 +450,24 @@ void BST::setHeight(TNode *n){
 
 
 TNode *rotateRight(TNode *tmp){
-	return;
-
+	TNode *tmp2 = tmp->left;
+	if(tmp->parent->left == tmp){
+		tmp->parent->left = tmp->left;
+		tmp->left->parent = tmp->parent;
+		tmp2->right->parent = tmp;
+		tmp->left = tmp->right->left;
+		tmp2->right = tmp;
+		tmp->parent = tmp2;
+	}
+	else if(tmp->parent->right == tmp){
+		tmp->parent->right = tmp->left;
+		tmp->left->parent = tmp->parent;
+		tmp2->right->parent = tmp;
+		tmp->left = tmp->right->left;
+		tmp2->right = tmp;
+		tmp->parent = tmp2;
+	}
+	return tmp;
 }
 
 
