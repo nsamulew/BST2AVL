@@ -75,7 +75,7 @@ void BST::printTreePost() {
 }
 
 bool BST::insert(string s, string l){
-/* Input: A string to be the phrase for the new node.
+/* Input: A string to be the phrase for the new node..
  * Output: A boolean that's true if a new node was sucessfully inserted
  * Action: Find the correct spot for a new node with phrase S and insert it
  */
