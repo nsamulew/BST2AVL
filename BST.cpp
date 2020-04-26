@@ -371,8 +371,26 @@ void BST::setHeight(TNode *n){
 	}
 }
 
-
-
+int getBalance(TNode *tmp){
+	int tmpBalance;
+	if(tmp->left == NULL || tmp->right == NULL){
+		if(tmp->left == NULL){
+			if(tmp->right == NULL){
+				tmpBalance = 0;
+			}
+			else{
+				tmpBalance = -tmp->right->height;
+			}
+		}
+		else{
+			tmpBalance = tmp->left->height;
+		}
+	}
+	else{
+		tmpBalance = tmp->left->height - tmp->right->height;
+	}
+	return tmpBalance;
+}
 
 
 
