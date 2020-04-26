@@ -494,7 +494,7 @@ TNode* BST::rotateRight(TNode *tmp){
 
 
 TNode* BST::rotateLeft(TNode *tmp){
-	TNode *tmp2 =tmp->right
+	TNode *tmp2 =tmp->right;
 	TNode *tmp3 = tmp2;
 	while (tmp3->left!=NULL){
 		tmp3=tmp3->left;
