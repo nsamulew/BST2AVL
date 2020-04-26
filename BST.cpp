@@ -371,7 +371,7 @@ void BST::setHeight(TNode *n){
 	}
 }
 
-int getBalance(TNode *tmp){
+int BST::getBalance(TNode *tmp){
 	int tmpBalance;
 	if(tmp->left == NULL || tmp->right == NULL){
 		if(tmp->left == NULL){
@@ -493,7 +493,7 @@ TNode* BST::rotateRight(TNode *tmp){
 
 
 
-TNode BST::*rotateLeft(TNode *tmp){
+TNode* BST::rotateLeft(TNode *tmp){
 	TNode *tmp2 =tmp->right
 	TNode *tmp3 = tmp2;
 	while (tmp3->left!=NULL){
