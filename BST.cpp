@@ -17,8 +17,8 @@ BST::BST() {
 	root = NULL;
 }
 
-BST::BST(string s){
-	root = new TNode(s);
+BST::BST(string s, string l){
+	root = new TNode(s,l);
 }
 
 void BST::clearTree() {
@@ -74,7 +74,7 @@ void BST::printTreePost() {
 	}
 }
 
-bool BST::insert(string s){
+bool BST::insert(string s, string l){
 /* Input: A string to be the phrase for the new node
  * Output: A boolean that's true if a new node was sucessfully inserted
  * Action: Find the correct spot for a new node with phrase S and insert it
@@ -94,7 +94,7 @@ bool BST::insert(string s){
 				return false;
 			}
 		}
-		TNode *n = new TNode(s);
+		TNode *n = new TNode(s,l);
 		n->parent=holder;
 		if (s.compare(holder->data->phrase) > 0){
 			holder->right=n;
@@ -106,7 +106,7 @@ bool BST::insert(string s){
 		return true;
 	}
 	else { //case when the tree is empty
-		TNode *n = new TNode(s);
+		TNode *n = new TNode(s,l);
 		root=n;
 		setHeight(n); //rest the height of the node we just inserted
 		return true;
