@@ -78,7 +78,7 @@ void BST::printTreePost() {
 
 bool BST::insert(string s, string l){
 /* Input: A string to be the phrase for the new node..
- * Output: A boolean that's true if a new node was sucessfully inserted
+ * Output: A boolean that's true if a new node was successfully inserted
  * Action: Find the correct spot for a new node with phrase S and insert it
  */
 	TNode *tmp = root;
@@ -481,6 +481,61 @@ TNode* BST::rotateRight(TNode *tmp){
 	}
 	return tmp2;
 }
+
+
+TNode* BST::rotateLeft(TNode *tmp){
+	cout << "rotating left func"<<endl;
+
+	TNode *tmp2 = tmp->right;
+	if(tmp->parent == NULL){
+		//good
+		tmp2->parent = NULL;
+		tmp->parent = tmp2;
+		tmp->right = tmp2->left;
+		if(tmp2->left){
+		tmp2->left->parent = tmp;
+		}
+		tmp2->left = tmp;
+	}
+	else if(tmp->parent->right == tmp){
+		cout << "test a" << endl;
+		tmp->parent->right = tmp2;
+		tmp2->parent = tmp->parent;
+		tmp->parent = tmp2;
+		tmp->right = tmp2->left;
+		tmp2->left->parent = tmp;
+		tmp2->left = tmp;
+	}
+	else{
+		cout << "test b" << endl;
+		tmp->parent->left = tmp2;
+		tmp2->parent = tmp->parent;
+		tmp->parent = tmp2;
+		tmp->right = tmp2->left;
+		tmp2->left->parent = tmp;
+		tmp2->left = tmp;
+	}
+	setHeight(tmp);
+	return tmp2;
+
+
+	/*TNode *tmp2 =tmp->right;
+	TNode *tmp3 = tmp2;
+	if (tmp3->left!=NULL){
+		tmp3=tmp3->left;
+	}
+	tmp2->parent=tmp->parent;
+	if(tmp2->parent!=NULL){
+		tmp2->parent->right = tmp2;
+	}
+	tmp->parent=tmp3;
+	tmp->right=NULL;
+	tmp3->left=tmp;
+	if (tmp2->parent==NULL){
+		root = tmp2;
+	}
+	setHeight(tmp);
+	return tmp2;*/
 
 
 TNode* BST::rotateLeft(TNode *tmp){
