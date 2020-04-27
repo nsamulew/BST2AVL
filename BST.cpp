@@ -103,12 +103,14 @@ bool BST::insert(string s, string l){
 			holder->left=n;
 		}
 		setHeight(n); //reset heights starting with the node we just inserted
+		printTreeIO(root);
 		return true;
 	}
 	else { //case when the tree is empty
 		TNode *n = new TNode(s,l);
 		root=n;
 		setHeight(n); //rest the height of the node we just inserted
+		printTreeIO(root);
 		return true;
 	}
 
@@ -341,7 +343,7 @@ void BST::setHeight(TNode *n){
 	//if n is original root
 	else if(n->left==NULL && n->right==NULL && n->parent == NULL){
 		n->height = 1;
-		cout<<n->data->phrase<<n->height<<endl;
+							//cout<<n->data->phrase<<n->height<<endl;
 		if(abs(getBalance(n))>1){
 			setHeightHelper(n);
 		}
@@ -350,7 +352,7 @@ void BST::setHeight(TNode *n){
 	//if n is a node with no children
 	else if(n->left==NULL && n->right==NULL){
 			n->height = 1;
-			cout<<n->data->phrase<<n->height<<endl;
+							//cout<<n->data->phrase<<n->height<<endl;
 			if(abs(getBalance(n))>1){
 				setHeightHelper(n);
 			}
@@ -360,7 +362,7 @@ void BST::setHeight(TNode *n){
 	//passed c to begin after e is added
 	else if(n->left == NULL){
 		n->height = n->right->height + 1;
-		cout<<n->data->phrase<<n->height<<endl;
+						//cout<<n->data->phrase<<n->height<<endl;
 		if(abs(getBalance(n))>1){
 			setHeightHelper(n);
 		}
@@ -369,7 +371,7 @@ void BST::setHeight(TNode *n){
 	//if n only has a left node
 	else if(n->right == NULL){
 		n->height = n->left->height + 1;
-		cout<<n->data->phrase<<n->height<<endl;
+						//cout<<n->data->phrase<<n->height<<endl;
 		if(abs(getBalance(n))>1){
 			setHeightHelper(n);
 		}
@@ -438,6 +440,8 @@ int BST::getBalance(TNode *tmp){
 		}
 	}
 	else{
+		//cout<<tmp->left->height<<endl;
+		//cout<<"please"<<endl;
 		tmpBalance = tmp->left->height - tmp->right->height;
 	}
 	return tmpBalance;
@@ -469,27 +473,21 @@ TNode* BST::rotateRight(TNode *tmp){
 
 
 TNode* BST::rotateLeft(TNode *tmp){
-
-
-
-	cout << "rotating left func"<<endl;
-	TNode *tmp2 =tmp->right;
-	TNode *tmp3 = tmp2;
-	if (tmp3->left!=NULL){
-		tmp3=tmp3->left;
-	}
-	tmp2->parent=tmp->parent;
-	if(tmp2->parent!=NULL){
-		tmp2->parent->right = tmp2;
-	}
-	tmp->parent=tmp3;
-	tmp->right=NULL;
-	tmp3->left=tmp;
-	if (tmp2->parent==NULL){
-		root = tmp2;
-	}
-	setHeight(tmp);
-	return tmp2;
+//	cout << "rotating left func"<<endl;
+//	TNode *tmp2 =tmp->right;
+//	TNode *tmp3 = tmp2->left;
+//	tmp2->parent=tmp->parent;
+//	if(tmp2->parent!=NULL){
+//		tmp2->parent->right = tmp2;
+//	}
+//	tmp->parent=tmp2;
+//	tmp->right=NULL;
+//	tmp3->left=tmp; //->parent
+//	if (tmp2->parent==NULL){
+//		root = tmp2;
+//	}
+//	setHeight(tmp);//tmp3
+//	return tmp2;
 }
 
 
