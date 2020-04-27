@@ -494,7 +494,6 @@ TNode* BST::rotateRight(TNode *tmp){
 }
 
 
-<<<<<<< HEAD
 TNode* BST::rotateLeft(TNode *tmp){
 	cout << "rotating left func"<<endl;
 
@@ -549,7 +548,7 @@ TNode* BST::rotateLeft(TNode *tmp){
 	setHeight(tmp);
 	return tmp2;*/
 
-=======
+
 TNode* BST::rotateLeft(TNode *tmp){
 	//cout << "rotating left func"<<endl;
 	TNode *tmp2 =tmp->right;
@@ -579,7 +578,6 @@ TNode* BST::rotateLeft(TNode *tmp){
 		setHeight(tmp);
 	}
 	return tmp2;
->>>>>>> branch 'master' of https://github.com/nsamulew/BST2AVL.git
 }
 
 
