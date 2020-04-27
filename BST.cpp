@@ -345,7 +345,7 @@ void BST::setHeight(TNode *n){
 	//if n is original root
 	else if(n->left==NULL && n->right==NULL && n->parent == NULL){
 		n->height = 1;
-		cout<<n->data->phrase<<n->height<<endl;
+								//cout<<n->data->phrase<<n->height<<endl;
 		if(abs(getBalance(n))>1){
 			setHeightHelper(n,GLOBALFLAG);
 		}
@@ -354,7 +354,7 @@ void BST::setHeight(TNode *n){
 	//if n is a node with no children
 	else if(n->left==NULL && n->right==NULL){
 			n->height = 1;
-					cout<<n->data->phrase<<n->height<<endl;
+								//cout<<n->data->phrase<<n->height<<endl;
 			if(abs(getBalance(n))>1){
 				setHeightHelper(n,GLOBALFLAG);
 			}
@@ -364,7 +364,7 @@ void BST::setHeight(TNode *n){
 	//passed c to begin after e is added
 	else if(n->left == NULL){
 		n->height = n->right->height + 1;
-		cout<<n->data->phrase<<n->height<<endl;
+								//cout<<n->data->phrase<<n->height<<endl;
 		if(abs(getBalance(n))>1){
 			setHeightHelper(n,GLOBALFLAG);
 		}
@@ -373,7 +373,7 @@ void BST::setHeight(TNode *n){
 	//if n only has a left node
 	else if(n->right == NULL){
 		n->height = n->left->height + 1;
-		cout<<n->data->phrase<<n->height<<endl;
+								//cout<<n->data->phrase<<n->height<<endl;
 		if(abs(getBalance(n))>1){
 			setHeightHelper(n,GLOBALFLAG);
 		}
@@ -388,7 +388,7 @@ void BST::setHeight(TNode *n){
 		else{
 			n->height = n->right->height + 1;
 		}
-		cout<<n->data->phrase<<n->height<<endl;
+								//cout<<n->data->phrase<<n->height<<endl;
 		if(abs(getBalance(n))>1){
 			setHeightHelper(n,GLOBALFLAG);
 		}
