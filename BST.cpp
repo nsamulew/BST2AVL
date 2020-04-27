@@ -338,24 +338,41 @@ void BST::setHeight(TNode *n){
 	if(n == NULL){
 		return;
 	}
-	//if n is root
+	//if n is original root
 	else if(n->left==NULL && n->right==NULL && n->parent == NULL){
 		n->height = 1;
+		cout<<n->data->phrase<<n->height<<endl;
+		if(abs(getBalance(n))>1){
+			setHeightHelper(n);
+		}
 		setHeight(n->parent);
 	}
 	//if n is a node with no children
 	else if(n->left==NULL && n->right==NULL){
 			n->height = 1;
+			cout<<n->data->phrase<<n->height<<endl;
+			if(abs(getBalance(n))>1){
+				setHeightHelper(n);
+			}
 			setHeight(n->parent);
 	}
 	//if n only has a right node
+	//passed c to begin after e is added
 	else if(n->left == NULL){
 		n->height = n->right->height + 1;
+		cout<<n->data->phrase<<n->height<<endl;
+		if(abs(getBalance(n))>1){
+			setHeightHelper(n);
+		}
 		setHeight(n->parent);
 	}
 	//if n only has a left node
 	else if(n->right == NULL){
 		n->height = n->left->height + 1;
+		cout<<n->data->phrase<<n->height<<endl;
+		if(abs(getBalance(n))>1){
+			setHeightHelper(n);
+		}
 		setHeight(n->parent);
 	}
 	//two children comparing which child node has the
@@ -367,18 +384,52 @@ void BST::setHeight(TNode *n){
 		else{
 			n->height = n->right->height + 1;
 		}
+		cout<<n->data->phrase<<n->height<<endl;
+		if(abs(getBalance(n))>1){
+			setHeightHelper(n);
+		}
 		setHeight(n->parent);
 	}
 }
 
+void BST::setHeightHelper(TNode *n){
+	//cout<<"you've activated my trap card"<<endl;
+	if (getBalance(n) == 2 || getBalance(n) == -2) {
+		if (getBalance(n) > 1) {
+			//cout << "test 4"<<endl;
+			if (getBalance(n->left) == 1) {
+				rotateRight(n);
+			} else {
+				rotateLeft(n->left);
+				rotateRight(n);
+			}
+		} else {
+			//cout << "test 1"<<endl;
+			//cout<<getBalance(n->right)<<endl;
+			if (getBalance(n->right) == -1) {
+				//cout << "test 2"<<endl;
+				rotateLeft(n);
+			} else {
+				//cout << "test 3"<<endl;
+				rotateRight(n->right);
+				rotateLeft(n);
+			}
+		}
+	}
+}
+
 int BST::getBalance(TNode *tmp){
+	//cout<<tmp->height<<endl;
 	int tmpBalance;
 	if(tmp->left == NULL || tmp->right == NULL){
+		//cout<<"test a"<<endl;
 		if(tmp->left == NULL){
+			//cout<<"test b"<<endl;
 			if(tmp->right == NULL){
 				tmpBalance = 0;
 			}
 			else{
+				//cout<<"test c"<<endl;
 				tmpBalance = -tmp->right->height;
 			}
 		}
@@ -393,81 +444,8 @@ int BST::getBalance(TNode *tmp){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 TNode* BST::rotateRight(TNode *tmp){
+	cout << "rotating right func"<<endl;
 	TNode *tmp2 = tmp->left;
 	if(tmp->parent->left == tmp){
 		tmp->parent->left = tmp->left;
@@ -477,7 +455,7 @@ TNode* BST::rotateRight(TNode *tmp){
 		tmp2->right = tmp;
 		tmp->parent = tmp2;
 	}
-	else if(tmp->parent->right == tmp){
+	else{
 		tmp->parent->right = tmp->left;
 		tmp->left->parent = tmp->parent;
 		tmp2->right->parent = tmp;
@@ -485,27 +463,32 @@ TNode* BST::rotateRight(TNode *tmp){
 		tmp2->right = tmp;
 		tmp->parent = tmp2;
 	}
+	setHeight(tmp);
 	return tmp2;
 }
 
 
-
-
-
-
 TNode* BST::rotateLeft(TNode *tmp){
+
+
+
+	cout << "rotating left func"<<endl;
 	TNode *tmp2 =tmp->right;
 	TNode *tmp3 = tmp2;
-	while (tmp3->left!=NULL){
+	if (tmp3->left!=NULL){
 		tmp3=tmp3->left;
 	}
 	tmp2->parent=tmp->parent;
+	if(tmp2->parent!=NULL){
+		tmp2->parent->right = tmp2;
+	}
 	tmp->parent=tmp3;
 	tmp->right=NULL;
 	tmp3->left=tmp;
 	if (tmp2->parent==NULL){
 		root = tmp2;
 	}
+	setHeight(tmp);
 	return tmp2;
 }
 
