@@ -22,7 +22,7 @@ int main() {
 	abbr->tree->clearTree();
 
 	delete abbr;
-	/*cout << "********* Testing rightleft ********" << endl;
+	cout << "********* Testing rightleft ********" << endl;
 	abbr = new Abbr("TestRightLeft.txt");
 	cout << "************************************" << endl;
 	abbr->tree->clearTree();
@@ -37,7 +37,7 @@ int main() {
 	cout << "********* Testing leftright ********" << endl;
 	abbr = new Abbr("PhrasesAndAbbr.txt");
 	abbr->Interface();
-	return 0;*/
+	return 0;
 }
 
 

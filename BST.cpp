@@ -398,32 +398,45 @@ void BST::setHeight(TNode *n){
 
 void BST::setHeightHelper(TNode *n,bool &myFlag){
 	//cout<<"you've activated my trap card"<<endl;
-	if (getBalance(n) == 2 || getBalance(n) == -2) {
+	if(myFlag){
+		myFlag = false;
+		if(n->parent==NULL){
+			if(getBalance(n)>1){
+				rotateRight(n);
+			}
+			else{
+				rotateLeft(n);
+			}
+		}
+		else if(abs(getBalance(n->parent))<2){
+			if(getBalance(n)>1){
+				rotateRight(n);
+			}
+			else{
+				rotateLeft(n);
+			}
+		}
+		else if(getBalance(n->parent)>1){
+			rotateRight(n->parent);
+		}
+		else{
+			rotateLeft(n->parent);
+		}
+	}
+	else if (getBalance(n) == 2 || getBalance(n) == -2) {
 		if (getBalance(n) > 1) {
 			if ((getBalance(n->left) == 1)) {
 				rotateRight(n);
 			} else {
-//				if(myFlag){
-//					myFlag = false;
-//					rotateRight(n->parent);
-//				}
-//				myFlag = true;
+				myFlag = true;
 				rotateLeft(n->left);
-				//rotateRight(n);
-				//setHeightHelper(n,myFlag);
 			}
 		} else {
 			if ((getBalance(n->right) == -1)) {
 				rotateLeft(n);
 			} else {
-//				if(myFlag){
-//					myFlag = false;
-//					rotateLeft(n->parent);
-//				}
 				myFlag = true;
 				rotateRight(n->right);
-				//rotateLeft(n);
-				//setHeightHelper(n,myFlag);
 			}
 		}
 	}
