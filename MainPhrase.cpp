@@ -16,27 +16,27 @@ int main() {
 	abbr->tree->clearTree();
 
 	delete abbr;
-	cout << "********* Testing right ************" << endl;
-	abbr = new Abbr("Testright.txt");
-	cout << "************************************" << endl;
-	abbr->tree->clearTree();
-
-	delete abbr;
-	cout << "********* Testing rightleft ********" << endl;
-	abbr = new Abbr("TestRightLeft.txt");
-	cout << "************************************" << endl;
-	abbr->tree->clearTree();
-
-	delete abbr;
-	cout << "********* Testing leftright ********" << endl;
-	abbr = new Abbr("TestLeftRight.txt");
-	cout << "************************************" << endl;
-	abbr->tree->clearTree();
-
-	delete abbr;
-	cout << "********* Testing leftright ********" << endl;
-	abbr = new Abbr("PhrasesAndAbbr.txt");
-	abbr->Interface();
+//	cout << "********* Testing right ************" << endl;
+//	abbr = new Abbr("Testright.txt");
+//	cout << "************************************" << endl;
+//	abbr->tree->clearTree();
+//
+//	delete abbr;
+//	cout << "********* Testing rightleft ********" << endl;
+//	abbr = new Abbr("TestRightLeft.txt");
+//	cout << "************************************" << endl;
+//	abbr->tree->clearTree();
+//
+//	delete abbr;
+//	cout << "********* Testing leftright ********" << endl;
+//	abbr = new Abbr("TestLeftRight.txt");
+//	cout << "************************************" << endl;
+//	abbr->tree->clearTree();
+//
+//	delete abbr;
+//	cout << "********* Testing leftright ********" << endl;
+//	abbr = new Abbr("PhrasesAndAbbr.txt");
+//	abbr->Interface();
 	return 0;
 }
 
